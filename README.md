@@ -8,8 +8,10 @@ You can use HCL Workload Automation (HWA) Observability for Datadog to monitor H
   - [Prerequisites](#prerequisites)
   - [Language support](#language-support)
   - [Installation](#installation)
-    - [1. Forwarding Logs to Datadog](#1-forwarding-logs-to-datadog)
-    - [2. Forwarding Metrics to Datadog](#2-forwarding-metrics-to-datadog)
+    - [1. Installating and configuring Datadog](#1-installating-and-configuring-datadog)
+    - [2. Datadog installation](#2-datadog-installation)
+    - [3. Forwarding Logs to Datadog](#3-forwarding-logs-to-datadog)
+    - [4. Forwarding Metrics to Datadog](#4-forwarding-metrics-to-datadog)
   - [WA Monitoring Dashboards and Alerts setup in Datadog](#wa-monitoring-dashboards-and-alerts-setup-in-datadog)
     - [1. Create Log Facets](#1-create-log-facets)
     - [2. Create Dashboards and Monitors](#2-create-dashboards-and-monitors)
@@ -31,6 +33,21 @@ For the dashboards provided with HWA Observability for Datadog, the only support
 
 ## Installation
 
+### 1. Installating and configuring Datadog
+1. From [HCL License Portal](https://id.hcltechsw.com/login/login.htm) download the appropriate HWA Observability installation package:
+   HWA Observability for HWA Observability Add-on
+2. Installation package for Datadog: HWA_OBSERVABILITY_APP_FOR_DATADOG_10.1.0.1.tar.gz
+3. Follow the below command to untar the gzip file 
+  
+  ```
+
+	tar -xvzf HWA_OBSERVABILITY_APP_FOR_DATADOG_10.1.0.1.tar.gz
+  ```
+
+4. Follow the steps mentioned on the ReadMe file to continue solution setup.
+
+### 2. Datadog installation
+
 1. To install the Datadog agent on your cluster, follow this procedure: [Datadog Agent on Kubernetes](https://docs.datadoghq.com/containers/kubernetes/installation/?tab=daemonset).
 2. At step 2, select the Manifest template on Linux that supports (METRICS,LOGS,APM,PROCESS,NPM,SECURITY).
 3. Continue with the installation until you reach step 4.
@@ -47,7 +64,7 @@ For the dashboards provided with HWA Observability for Datadog, the only support
 
 5. Before executing step 6, configure your YAML file for Forwarding metrics and logs steps as mentioned below.
 
-### 1. Forwarding Logs to Datadog
+### 3. Forwarding Logs to Datadog
 
 Inside its manifest daemonset.yaml, add the following environment details:
 
@@ -62,7 +79,7 @@ For Openshift installtion, inside its manifest daemonset.yaml, add the following
  - name: DD_KUBELET_TLS_VERIFY
    value: "false"
   ```
-### 2. Forwarding Metrics to Datadog
+### 4. Forwarding Metrics to Datadog
 
 Inside its manifest cluster-agent-deployment.yaml, add the following to annotations for the Cluster Agent:
 ```
