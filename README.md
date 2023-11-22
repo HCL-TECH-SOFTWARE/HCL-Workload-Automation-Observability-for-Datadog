@@ -36,7 +36,7 @@ For the dashboards provided with HWA Observability for Datadog, the only support
 
 ### 1. Installing and configuring Datadog
 1. From [HCL License Portal](https://id.hcltechsw.com/login/login.htm) download the appropriate HWA Observability installation package:
-   HWA Observability for HWA Observability Add-on
+   HWA Observability for Datadog Add-on
 2. Installation package for Datadog: HWA_OBSERVABILITY_APP_FOR_DATADOG_10.x.tar.gz
 3. Follow the below command to untar the gzip file 
   
